@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+
+    <h1>Odcinki, które obejrzeliśmy</h1>
+    <p> Ich dane możesz obejrzeć poniżej. </p>
+
+    <div class="row mx-auto">
+        <%  locals.episodes.forEach(function(episode){ %>
+        <div class="card mr-1 ml-1 mt-1 mb-1 mx-auto" style="width: 18rem;">
+            <img src="/img/<%= episode.series %>.jpg" class="card-img-top mx-auto" alt="<%= episode.series %>">
+            <div class="card-body mx-auto">
+                <h5 class="card-title mx-auto"><%= episode.series %> <%= episode.episodeNumber %></h5>
+                <a href="/episodes/<%= episode.slug %>" class="btn btn-primary mx-auto">Zobacz więcej</a>
+                <% if (locals.user && locals.user.level <= 10) { %>
+                    <a href="/episodes/<%= episode.slug %>/edit" class="btn btn-primary mx-auto">Edytuj</a>
+                <% } %>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+
+<%- include("partials/footer"); -%>

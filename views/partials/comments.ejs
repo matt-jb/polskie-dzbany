@@ -1,0 +1,47 @@
+<% if(Object.keys(episode.comments).length > 0) { %>
+
+    <div class="card text-center">
+        <div class="card-header">
+            <strong>Komentarze</strong>
+        </div>
+        <div class="card-body">
+
+        </div>
+        <div class="container mx-auto">
+          <div class="row">
+            <% episode.comments.forEach(comment => { %>
+            <div class="card mr-1 ml-1 mt-1 mb-5 mx-auto" style="width: 80%;">
+              <div class="card-body">
+                <h5 class="card-title text-left"><%= comment.author.name %></h5>
+                <p class="card-text text-left"><%= comment.text %></p>
+                <p class="text-muted small text-left">Napisano: <%= moment(comment.created).fromNow(); %></p>
+              </div>
+            </div>
+            <% }); %>
+          </div>
+        </div>
+        <div class="card-footer text-muted"></div>
+      </div>
+
+<% } else { %>
+
+    <div class="card text-center">
+        <div class="card-header">
+            <strong>Komentarze</strong>
+        </div>
+        <div class="card-body">
+
+        </div>
+        <div class="container mx-auto">
+          <div class="row">
+            <div class="card mr-1 ml-1 mt-1 mb-5 mx-auto" style="width: 80%;">
+              <div class="card-body">
+                <h5 class="card-title">Brak komentarzy!</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted"></div>
+      </div>
+
+<% } %>

@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+
+<h2>Zresetuj swoje hasło</h2>
+
+<form method="POST">
+    <div class="form-group">
+      <label for="password">Nowe hasło</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+        <label for="confirm-password">Powtórz nowe hasło</label>
+        <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+      </div>
+    <button type="submit" class="btn btn-primary">Zresetuj hasło</button>
+  </form>
+
+<%- include("partials/footer"); -%>

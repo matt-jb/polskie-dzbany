@@ -1,0 +1,43 @@
+<%- include("partials/header"); -%>
+
+<div class="card text-center">
+  <div class="card-header">
+    Detale odcinka
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= episode.series %> #<%= episode.episodeNumber %></h5>
+    <p class="card-text">W tym odcinku odnotowaliśmy następującą liczbę wypadków poszczególnych marek:</p>
+  </div>
+  <div class="container mx-auto">
+    <div class="row">
+      <% for (const [key, value] of Object.entries((episode.brandsInEpisode).toJSON())) { %>
+      <% if (value > 0) { %>
+      <div class="card mr-1 ml-1 mt-1 mb-1 mx-auto" style="width: 20rem;">
+        <img src="/img/cars/default.jpg" class="card-img-top" alt="<%= key %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= key %></h5>
+          <p class="card-text">Liczba wypadków w odcinku: <strong><%= value %></strong></p>
+        </div>
+      </div>
+      <% } %>
+      <% } %>
+    </div>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Jeśli nie widzisz którejś marki w liście powyżej, oznacza to, że<br>
+      nie odnotowaliśmy ani jednego wypadku tej marki w odcinku numer <%= episode.episodeNumber %>.</p>
+    <a href="/episodes" class="btn btn-primary">Wróć</a>
+  </div>
+  <div class="card-footer text-muted">
+    <span title="<%= moment(episode.created).format("dddd, D.MM.YYYY o HH:mm:ss"); %>">Zmodyfikowano: <%= moment(episode.created).fromNow(); %></span>
+  </div>
+</div>
+
+<% if (locals.user) { %>
+<%- include("partials/_commentsForm"); -%>
+<% } else { %>
+<p class='text-center mt-5 mb-5'>Musisz być zalogowany, by zostawić komentarz!</p>
+<% } %>
+<%- include("partials/comments"); -%>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,27 @@
+<%- include("partials/header"); -%>
+
+<h2>Edytuj swoje konto</h2>
+<br>
+<form action="/account" method="POST">
+    <div class="form-group">
+        <label for="InputName">Twoje imię lub nick</label>
+        <input type="text" class="form-control" id="InputName" aria-describedby="nameHelp" name="name"
+            value="<%= locals.user.name %>" required>
+    </div>
+    <div class="form-group">
+        <label for="InputEmail">Twój adres e-mail</label>
+        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email"
+            value="<%= locals.user.email %>" required>
+    </div>
+    <!-- <div class="form-group">
+      <label for="password">Twoje Hasło</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+        <label for="confirm-password">Powtórz hasło</label>
+        <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+      </div> -->
+    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+</form>
+
+<%- include("partials/footer"); -%>

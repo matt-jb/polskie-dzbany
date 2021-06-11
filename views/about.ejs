@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+
+<h1>O projekcie Polskie Dzbany</h1>
+<p class="zajawka"> Przede wszystkim: <strong>ten projekt jest zrobiony dla zabawy, a nie na poważnie</strong>, więc nie bierzcie go na
+    serio. </p>
+<p class="zajawka"> A teraz wyjaśnienie skrótowe: </p>
+<p class="zajawka"> Centralna Ewidencja Pojazdów i Kierowców podaje dane (co ciekawe - jedynie do ok. końca listopada 2019 r.) ze
+    wszystkich pierwszych rejestracji samochodów w Polsce <a href="http://www.cepik.gov.pl/" target="_blank">poprzez
+        swoje api</a>. Stamtąd właśnie pobraliśmy dane o ilości zarejestrowanych
+    samochodów danej marki. </p>
+<p class="zajawka"> Następnie zestawiliśmy te dane z ilością wypadków dóch serii: Polskie Drogi oraz Stop Cham poprzez wyciągnięcie
+    procentowego udziału marek samochodów: w procencie pierwszych rejestracji oraz w procencie ilości wypadków, które
+    spisaliśmy z odcinków. Dzięki temu uzyskaliśmy nasz autorski <em>Współczynnik Dzbana</em>. </p>
+<p class="zajawka"> Prawda, że beznadziejna metodologia? :D Bo nikt nigdy nie gwarantował, że ten serwis przedstawia dane rzetelne,
+    jedynie chcieliśmy się przekonać czysto anegdotycznie co nam wyjdzie. </p>
+<p class="zajawka"> Spisując dane z wypadków mieliśmy następujące zasady:
+    <ol>
+        <li class="list-about">"Kto spowodował wypadek" postanawiamy wyłącznie na podstawie Prawa o Ruchu Drogowym. Nawet jeśli uważamy, że
+            kierowca mimo naruszenia przepisów nie popełnił obiektywnego błędu. Prawo to prawo z bardzo dobrego powodu.
+        </li>
+        <li class="list-about">Spisujemy jedynie sytuacje, w których ze 100% pewnością wiemy, jakiej marki kierowca spowodował wypadek.
+            Sytuacje w najmniejszym stopniu niejasne nie są wzięte pod uwagę.</li>
+        <li class="list-about">Spisujemy jedynie wypadki i wykroczenia samochodów osobowych - bez ciężarówek, TIR-ów, traktorów i tak
+            dalej.</li>
+    </ol>
+</p>
+
+<%- include("partials/footer"); -%>
