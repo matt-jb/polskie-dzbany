@@ -1,4 +1,4 @@
-# Polskie dzbany
+# Polskie Dzbany
 
 Node.js app about stereotypical polish drivers.
 
