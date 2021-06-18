@@ -17,7 +17,7 @@
         <li class="navbar__item"><a class="navbar__link" href="/about">O projekcie</a></li>
         <li class="navbar__item"><a class="navbar__link" href="/episodes">Sprawdź nasze dane</a></li>
         <% if (locals.user && locals.user.level <= 10) { %>
-          <li class="navbar__item"><a class="navbar__link" href="/episodes">Dodaj odcinek</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="/add">Dodaj odcinek</a></li>
         <% } %>
         <% if (locals.user) { %>
           <li class="navbar__item"><a class="navbar__link" href="/account">Twoje konto</a></li>
