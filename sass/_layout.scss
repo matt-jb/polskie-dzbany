@@ -1,0 +1,15 @@
+.header {
+    max-width: 120rem;
+    margin: 0 auto 1rem;
+    padding: 2rem;
+    background-color: var(--color-tertiary);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 10rem;
+
+    font-size: 1.5rem;
+
+}
