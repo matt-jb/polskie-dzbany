@@ -1,43 +1,40 @@
 h1 {
     font-size: 5rem;
-    font-family: var(--font-body);
-    color: var(--color-grey-dark-1);
+    color: $color-grey-dark-1;
     text-transform: uppercase;
     letter-spacing: .2rem;
     margin-left: 4rem;
 }
 
 .container {
-    background-color: var(--color-grey-light-1);
+    background-color: $color-grey-light-1;
     padding: 2rem 4rem 2rem;
     margin: 2rem 0;
 }
 
 .first-paragraph {
     font-size: 1.6rem;
-    font-family: var(--font-body);
     text-align: justify;
-    color: var(--color-grey-dark-1);
+    color: $color-grey-dark-1;
     letter-spacing: .2rem;
     margin-top: 2rem;
     position: relative;
 
     &__link:link,
     &__link:visited {
-        color: var(--color-tertiary);
+        color: $color-tertiary;
         text-decoration: none;
         transition: all .2s;
     }
 
     &__link:hover {
-        color: var(--color-tertiary-dark);
+        color: $color-tertiary-dark;
     }
 
     &__list {
         font-size: 1.6rem;
-        font-family: var(--font-body);
         text-align: left;
-        color: var(--color-grey-dark-1);
+        color: $color-grey-dark-1;
         letter-spacing: .2rem;
         margin: 2rem 0 0rem 2.4rem;
     }

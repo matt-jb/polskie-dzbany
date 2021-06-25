@@ -1,8 +1,10 @@
 .nav-main {
-    font-family: var(--font-body);
-    background-color: var(--color-primary-dark);
+    background: linear-gradient(
+        to right bottom,
+        $color-primary,
+        $color-primary-light);
     height: 18rem;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -16,7 +18,7 @@
         font-weight: 600;
         letter-spacing: 0.6rem;
         text-decoration: none;
-        color: var(--color-grey-light-3);
+        color: $color-grey-light-3;
         margin-top: 1rem;
         transition: all .1s;
         
@@ -34,9 +36,8 @@
     margin-bottom: 1rem;
 
     &__item {
-        font-family: var(--font-body);
         display: block;
-        flex: 0 1 auto; /* Default */
+        flex: 0 1 auto;
         list-style-type: none;
         position: relative;
         
@@ -48,7 +49,7 @@
     &__link:link,
     &__link:visited {
         font-size: 1.5rem;
-        color: var(--color-grey-light-4);
+        color: $color-grey-light-4;
         text-decoration: none;
         transition: all .2s;
 
@@ -59,14 +60,14 @@
             height: .2rem;
             bottom: 0;
             left: 0;
-            background-color: var(--color-tertiary);
+            background-color: $color-tertiary;
             visibility: hidden;
             transition: all 0.15s ease-in-out;
         }
     }
 
     &__link:hover {
-        color: var(--color-grey-light-1);
+        color: $color-grey-light-1;
         
         &:before {
             visibility: visible;
