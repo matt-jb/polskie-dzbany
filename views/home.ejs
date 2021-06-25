@@ -1,29 +1,30 @@
 <%- include("partials/header"); -%>
 
-<h1>Strona główna</h1>
-<p class="zajawka"> W tym miejscu niedługo dowiemy się które marki samochodów są wybierane najczęściej przez kierowców potocznie i wcale
+<div class="container">
+  <h1>Strona główna</h1>
+  <p class="first-paragraph"> W tym miejscu niedługo dowiemy się które marki samochodów są wybierane najczęściej przez kierowców potocznie i wcale
     nie pieszczotliwie nazywanych dzbanami. Oczywiście wszystko to dla zabawy, bo nie da się zdobyć w 100% precyzyjnych danych na ten temat. Niedługo będziesz
-    mógł poczytać o naszej metodologii <a href="/about">tutaj</a>.</p>
+    mógł poczytać o naszej metodologii <a class="first-paragraph__link" href="/about">tutaj</a>.</p>
+</div>
 
-        <div class="container">
-            <div class="row">
-            <%  cars.forEach(function(car){ %>
-
-              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                <div class="card text-center mt-2 mb-2">
-                  <div class="card-body">
-                    <h2><%= car.brand %></h2>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fas fa-car-alt mx-2 fa-lg main-icon"></i>Samochody w bazie: <strong><%= car.numberOfCars %></strong></li>
-                    <li class="list-group-item"><i class="fas fa-car-crash mx-2 fa-lg main-icon"></i>Wypadki w bazie: <strong><%= accidents[0][car.brand] %></strong></li>
-                    <li class="list-group-item"><i class="fas fa-user-shield mx-2 fa-lg main-icon"></i>Współczynnik dzbana: <strong><%= wspolczynnikDzbana[car.brand] %></strong></li>
-                  </ul>
-                </div>
+<div class="container">
+        <div class="row">
+        <%  cars.forEach(function(car){ %>
+          <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card text-center mt-2 mb-2">
+              <div class="card-body">
+                <h2><%= car.brand %></h2>
               </div>
-
-            <% }); %>
-        </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fas fa-car-alt mx-2 fa-lg main-icon"></i>Samochody w bazie: <strong><%= car.numberOfCars %></strong></li>
+                <li class="list-group-item"><i class="fas fa-car-crash mx-2 fa-lg main-icon"></i>Wypadki w bazie: <strong><%= accidents[0][car.brand] %></strong></li>
+                <li class="list-group-item"><i class="fas fa-user-shield mx-2 fa-lg main-icon"></i>Współczynnik dzbana: <strong><%= wspolczynnikDzbana[car.brand] %></strong></li>
+              </ul>
+            </div>
+          </div>
+          
+          <% }); %>
     </div>
+</div>
 
 <%- include("partials/footer"); -%>

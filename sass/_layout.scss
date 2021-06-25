@@ -1,15 +1,78 @@
-.header {
-    max-width: 120rem;
-    margin: 0 auto 1rem;
-    padding: 2rem;
-    background-color: var(--color-tertiary);
+.nav-main {
+    font-family: var(--font-body);
+    background-color: var(--color-primary-dark);
+    height: 18rem;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    
+    text-transform: uppercase;
+    letter-spacing: .2rem;
 
-    height: 10rem;
+    &__name {
+        font-size: 6rem;
+        font-weight: 600;
+        letter-spacing: 0.6rem;
+        text-decoration: none;
+        color: var(--color-grey-light-3);
+        margin-top: 1rem;
+        transition: all .1s;
+        
+        &:hover {
+            letter-spacing: 0.7rem;
+        }
+    }
+}
 
-    font-size: 1.5rem;
+.menu {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 1rem;
 
+    &__item {
+        font-family: var(--font-body);
+        display: block;
+        flex: 0 1 auto; /* Default */
+        list-style-type: none;
+        position: relative;
+        
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    &__link:link,
+    &__link:visited {
+        font-size: 1.5rem;
+        color: var(--color-grey-light-4);
+        text-decoration: none;
+        transition: all .2s;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: .2rem;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color-tertiary);
+            visibility: hidden;
+            transition: all 0.15s ease-in-out;
+        }
+    }
+
+    &__link:hover {
+        color: var(--color-grey-light-1);
+        
+        &:before {
+            visibility: visible;
+            width: 100%;
+        }
+    }
+
+    
 }
