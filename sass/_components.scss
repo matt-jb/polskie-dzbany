@@ -52,13 +52,27 @@ h1 {
 
 .card {
     margin-bottom: 4rem;
-    
+    transition: all, .2s;
+    height: 35rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    overflow: hidden;
+    position: relative;
+
     &__image {
-        max-width: 25rem;
+        background-size: cover;
+        max-width: 35rem;
     }
 
     &__heading {
-        background-color: khaki;
+        font-size: 3rem;
+        color: $color-grey-dark-1;
+        text-transform: uppercase;
+        text-align: right;
+        letter-spacing: .1rem;
+        position: absolute;
+        top: 18rem;
+        right: 2rem;
+        
     }
 
     &__list {
@@ -69,4 +83,15 @@ h1 {
         }
     }
 
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &__heading-span {
+        padding: 0 1rem;
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-secondary-light, .75),
+            rgba($color-secondary, .75));
+    }
 }

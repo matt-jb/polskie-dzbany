@@ -115,12 +115,30 @@ h1 {
     margin-right: 4rem; }
 
 .card {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  transition: all, .2s;
+  height: 35rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative; }
   .card__image {
-    max-width: 25rem; }
+    background-size: cover;
+    max-width: 35rem; }
   .card__heading {
-    background-color: khaki; }
+    font-size: 3rem;
+    color: #333;
+    text-transform: uppercase;
+    text-align: right;
+    letter-spacing: .1rem;
+    position: absolute;
+    top: 18rem;
+    right: 2rem; }
   .card__list {
     background-color: lavender; }
     .card__list [class*="--item"] {
       background-color: lawngreen; }
+  .card:hover {
+    transform: scale(1.05); }
+  .card__heading-span {
+    padding: 0 1rem;
+    background-image: linear-gradient(to right bottom, rgba(195, 236, 238, 0.75), rgba(63, 193, 201, 0.75)); }
