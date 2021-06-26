@@ -106,3 +106,21 @@ h1 {
     color: #333;
     letter-spacing: .2rem;
     margin: 2rem 0 0rem 2.4rem; }
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .cards:not(:last-child) {
+    margin-right: 4rem; }
+
+.card {
+  margin-bottom: 4rem; }
+  .card__image {
+    max-width: 25rem; }
+  .card__heading {
+    background-color: khaki; }
+  .card__list {
+    background-color: lavender; }
+    .card__list [class*="--item"] {
+      background-color: lawngreen; }

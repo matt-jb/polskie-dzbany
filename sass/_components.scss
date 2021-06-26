@@ -39,3 +39,34 @@ h1 {
         margin: 2rem 0 0rem 2.4rem;
     }
 }
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &:not(:last-child) {
+        margin-right: 4rem;
+    }
+}
+
+.card {
+    margin-bottom: 4rem;
+    
+    &__image {
+        max-width: 25rem;
+    }
+
+    &__heading {
+        background-color: khaki;
+    }
+
+    &__list {
+        background-color: lavender;
+
+        & [class*="--item"] {
+            background-color: lawngreen;
+        }
+    }
+
+}

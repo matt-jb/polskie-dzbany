@@ -7,15 +7,19 @@
     mógł poczytać o naszej metodologii <a class="first-paragraph__link" href="/about">tutaj</a>.</p>
 </div>
 
-<div class="container">
-  <%  cars.forEach(function(car){ %>
-    <h2><%= car.brand %></h2>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><i class="fas fa-car-alt mx-2 fa-lg main-icon"></i>Samochody w bazie: <strong><%= car.numberOfCars %></strong></li>
-      <li class="list-group-item"><i class="fas fa-car-crash mx-2 fa-lg main-icon"></i>Wypadki w bazie: <strong><%= accidents[0][car.brand] %></strong></li>
-      <li class="list-group-item"><i class="fas fa-user-shield mx-2 fa-lg main-icon"></i>Współczynnik dzbana: <strong><%= wspolczynnikDzbana[car.brand] %></strong></li>
-    </ul>
-<% }); %>
-</div>
+<section class="cards">
+  <% cars.forEach(function(car){ %>
+    <div class="card">
+      <img class="card__image" src="./img/cars/<%= car.brand %>.jpg" alt="Samochód marki <%= car.brand %>">
+      <h2 class="card__heading"><%= car.brand %></h2>
+      <ul class="card__list">
+        <li class="card__list--item-cars">Samochody w bazie: <strong><%= car.numberOfCars %></strong></li>
+        <li class="card__list--item-accidents">Wypadki w bazie: <strong><%= accidents[0][car.brand] %></strong></li>
+        <li class="card__list--item-jug-ratio">Współczynnik dzbana: <strong><%= wspolczynnikDzbana[car.brand] %></strong></li>
+      </ul>
+    </div>
+  <% }); %>
+</section>
+
 
 <%- include("partials/footer"); -%>
