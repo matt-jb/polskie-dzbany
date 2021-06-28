@@ -73,7 +73,35 @@
             visibility: visible;
             width: 100%;
         }
+    }   
+}
+
+.footer {
+    display: flex;
+    height: 20rem;
+
+
+    &__left-side {
+        background-color: orange;
     }
 
-    
+    &__list {
+        list-style-type: none;
+    }
+
+    &__single-link {
+        background-color: indianred;
+    }
+
+    &__right-side {
+        background-color: green;
+    }
+
+    &__title {
+        background-color: lightsalmon;
+    }
+
+    &__paragraph {
+        background-color: mediumspringgreen;
+    }
 }

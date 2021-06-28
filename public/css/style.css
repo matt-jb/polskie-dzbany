@@ -18,7 +18,7 @@ body {
   overflow-x: hidden;
   position: relative;
   max-width: 120rem;
-  margin: 2rem auto 2rem;
+  margin: 2rem auto 0;
   padding: 0 2rem; }
 
 .nav-main {
@@ -75,6 +75,22 @@ body {
       visibility: visible;
       width: 100%; }
 
+.footer {
+  display: flex;
+  height: 20rem; }
+  .footer__left-side {
+    background-color: orange; }
+  .footer__list {
+    list-style-type: none; }
+  .footer__single-link {
+    background-color: indianred; }
+  .footer__right-side {
+    background-color: green; }
+  .footer__title {
+    background-color: lightsalmon; }
+  .footer__paragraph {
+    background-color: mediumspringgreen; }
+
 h1 {
   font-size: 5rem;
   color: #333;
@@ -117,13 +133,14 @@ h1 {
 .card {
   margin-bottom: 4rem;
   transition: all, .2s;
-  height: 35rem;
+  height: 44rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative; }
   .card__image {
     background-size: cover;
-    max-width: 35rem; }
+    max-width: 35rem;
+    margin-bottom: 1rem; }
   .card__heading {
     font-size: 3rem;
     color: #333;
@@ -134,9 +151,31 @@ h1 {
     top: 18rem;
     right: 2rem; }
   .card__list {
-    background-color: lavender; }
+    list-style: none;
+    width: 80%;
+    margin: 0 auto; }
     .card__list [class*="--item"] {
-      background-color: lawngreen; }
+      color: #999;
+      text-align: center;
+      font-size: 1.6rem;
+      padding: 1.5rem 1rem;
+      position: relative; }
+      .card__list [class*="--item"]:not(:last-child):before {
+        content: "";
+        position: absolute;
+        left: 25%;
+        bottom: 0;
+        height: 1px;
+        width: 50%;
+        border-bottom: 1px solid #fea8c2; }
+  .card__value {
+    color: #333;
+    font-weight: 600; }
+  .card__jug-meter {
+    color: #333;
+    font-weight: 700;
+    padding: 0 .5rem;
+    background-image: linear-gradient(to right bottom, rgba(254, 168, 194, 0.75), rgba(252, 81, 133, 0.75)); }
   .card:hover {
     transform: scale(1.05); }
   .card__heading-span {
