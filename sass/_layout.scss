@@ -4,6 +4,7 @@
         $color-primary,
         $color-primary-light);
     height: 18rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     
     display: flex;
     flex-direction: column;
@@ -78,30 +79,85 @@
 
 .footer {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 20rem;
-
+    width: 100%;
+    margin: 1rem 0 0;
+    background: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &__left-side {
-        background-color: orange;
+
     }
 
     &__list {
         list-style-type: none;
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin-left: 10rem;
     }
 
-    &__single-link {
-        background-color: indianred;
+    &__menu-item {
+
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: $color-grey-dark-2;
+        text-decoration: none;
+        line-height: 3.5rem;
+        transition: all .2s;
+    }
+
+    &__link:hover {
+        color: $color-tertiary-light;
     }
 
     &__right-side {
-        background-color: green;
+        text-align: center;
+        margin-right: 14rem;
+        width: 30rem;
     }
 
     &__title {
-        background-color: lightsalmon;
+        font-weight: 800;
+        font-size: 4rem;
+        text-transform: uppercase;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        color: $color-grey-dark-1;
+        transition: all .15s;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        
+
+        &:hover,
+        &:active {
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            transform: rotate(3deg) scale(1.2);
+        }
+    }
+
+    &__top {
+        letter-spacing: .5rem;
+        margin-bottom: -2rem;
+    }
+
+    &__bottom {
+        letter-spacing: .65rem;
     }
 
     &__paragraph {
-        background-color: mediumspringgreen;
+        color: $color-grey-dark-1;
+        font-size: 1.4rem;
+        font-weight: 300;
+        max-width: 20rem;
+        margin: 0 auto;
     }
 }
