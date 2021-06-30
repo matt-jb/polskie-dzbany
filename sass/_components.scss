@@ -8,9 +8,9 @@ h1 {
 
 .container {
     background-color: $color-grey-light-1;
-    padding: 2rem 4rem 2rem;
-    margin: 0 0 2rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    padding: 2rem 4rem 2rem;
+    margin: 0;
 }
 
 .first-paragraph {
@@ -46,15 +46,17 @@ h1 {
     flex-wrap: wrap;
     display: inline-flex;
     gap: 1rem;
+    margin: 2rem 0 2rem;
+    width: 100%;
 }
 
 .card {
-    margin-bottom: 2rem;
     transition: all, .2s;
     height: 44rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     overflow: hidden;
     position: relative;
+    margin-bottom: 2rem;
 
     &__image {
         background-size: cover;
@@ -86,17 +88,35 @@ h1 {
             padding: 1.5rem 1rem;
             position: relative;
 
-            &:not(:last-child) {
-                &:before {
-                    content: "";
-                    position: absolute;
-                    left: 25%;
-                    bottom: 0;
-                    height: 1px;
-                    width: 50%;
-                    border-bottom: 1px solid $color-tertiary-light;
-                }
+            &:not(:last-child):before {
+                content: "";
+                position: absolute;
+                left: 25%;
+                bottom: 0;
+                height: 1px;
+                width: 50%;
+                border-bottom: 1px solid $color-tertiary-light;
             }
+        }
+
+        &--item-episode {
+            font-size: 2.5rem !important;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $color-grey-dark-2 !important;
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $color-secondary-dark;
+        text-decoration: none;
+        transition: all .2s;
+
+        &:hover {
+            color: $color-secondary;
+
         }
     }
 
@@ -125,5 +145,13 @@ h1 {
             to right bottom,
             rgba($color-secondary-light, .75),
             rgba($color-secondary, .75));
+    }
+}
+
+.login {
+
+    &__form {
+        width: 50%;
+        padding: 4rem;
     }
 }

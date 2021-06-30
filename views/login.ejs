@@ -1,29 +1,29 @@
 <%- include("partials/header"); -%>
 
-<h2>Zaloguj się</h2>
+<div class="container">
+  <h1>Zaloguj się</h1>
 
-<form action="/login" method="POST">
-    <div class="form-group">
-      <label for="InputEmail">E-mail</label>
-      <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="InputPassword">Hasło</label>
-      <input type="password" class="form-control" id="InputPassword" name="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Zaloguj</button>
-</form>
+  <div class="login">
+    <form action="/login" method="POST">
+      <div class="login__form">
+        <label for="InputEmail">Adres e-mail</label>
+        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email" placeholder="Adres e-mail" required>
+        <label for="InputPassword">Hasło</label>
+        <input type="password" class="form-control" id="InputPassword" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Zaloguj</button>
+    </form>
+  </div>
 
-<br><br>
+  <h2>Zapomniałeś hasła?</h2>
 
-<h2>Zapomniałeś hasła?</h2>
-
-<form action="/account/forgot" method="POST">
+  <form action="/account/forgot" method="POST">
     <div class="form-group">
       <label for="InputEmail">E-mail</label>
       <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email" required>
     </div>
     <button type="submit" class="btn btn-primary">Zresetuj hasło</button>
-</form>
+  </form>
+</div>
 
 <%- include("partials/footer"); -%>

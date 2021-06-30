@@ -1,21 +1,23 @@
 <%- include("partials/header"); -%>
 
+<div class="container">
     <h1>Odcinki, które obejrzeliśmy</h1>
-    <p> Ich dane możesz obejrzeć poniżej. </p>
+    <p class="first-paragraph">Ich dane możesz obejrzeć poniżej.</p>
+</div>
 
-    <div class="row mx-auto">
-        <%  locals.episodes.forEach(function(episode){ %>
-        <div class="card mr-1 ml-1 mt-1 mb-1 mx-auto" style="width: 18rem;">
-            <img src="/img/<%= episode.series %>.jpg" class="card-img-top mx-auto" alt="<%= episode.series %>">
-            <div class="card-body mx-auto">
-                <h5 class="card-title mx-auto"><%= episode.series %> <%= episode.episodeNumber %></h5>
-                <a href="/episodes/<%= episode.slug %>" class="btn btn-primary mx-auto">Zobacz więcej</a>
-                <% if (locals.user && locals.user.level <= 10) { %>
-                    <a href="/episodes/<%= episode.slug %>/edit" class="btn btn-primary mx-auto">Edytuj</a>
-                <% } %>
-            </div>
-        </div>
-        <% }); %>
+<section class="cards">
+    <%  locals.episodes.forEach(function(episode){ %>
+    <div class="card">
+        <img class="card__image" src="/img/<%= episode.series %>.jpg" alt="<%= episode.series %> odcinek <%= episode.episodeNumber %>">
+        <ul class="card__list">
+            <li class="card__list--item-episode"><%= episode.series %> <%= episode.episodeNumber %></li>
+            <li class="card__list--item-see-more"><a href="/episodes/<%= episode.slug %>" class="card__link">Zobacz więcej</a></li>
+            <% if (locals.user && locals.user.level <= 10) { %>
+                <li class="card__list--item-edit"><a href="/episodes/<%= episode.slug %>/edit" class="card__link">Edytuj odcinek</a></li>
+            <% } %>
+        </ul>
     </div>
+    <% }); %>
+</section>
 
 <%- include("partials/footer"); -%>
