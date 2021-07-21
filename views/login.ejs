@@ -4,26 +4,35 @@
   <h1>Zaloguj się</h1>
 
   <div class="login">
-    <form action="/login" method="POST">
-      <div class="login__form">
-        <label for="InputEmail">Adres e-mail</label>
-        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email" placeholder="Adres e-mail" required>
-        <label for="InputPassword">Hasło</label>
-        <input type="password" class="form-control" id="InputPassword" name="password" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Zaloguj</button>
-    </form>
+    <div class="login__form">
+      <form action="/login" method="POST" class="form">
+        <div class="form__group">
+          <input type="email" class="form__input" id="InputEmail" aria-describedby="emailHelp" name="email" placeholder="Adres e-mail" required>
+          <label for="InputEmail" class="form__label">Adres e-mail</label>
+        </div>
+
+        <div class="form__group">
+          <input type="password" class="form__input" id="InputPassword" name="password" placeholder="Hasło" required>
+          <label for="InputPassword" class="form__label">Hasło</label>
+        </div>
+        <button type="submit" class="form__button">Zaloguj <span class="form__button--arrow">&rarr;</span></button>
+      </form>
+    </div>
   </div>
 
-  <h2>Zapomniałeś hasła?</h2>
+  <h2 class="secondary-heading">Zapomniałeś hasła?</h2>
 
-  <form action="/account/forgot" method="POST">
-    <div class="form-group">
-      <label for="InputEmail">E-mail</label>
-      <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email" required>
+  <div class="forgot-password">
+    <div class="forgot-password__form">
+      <form action="/account/forgot" method="POST" class="form">
+        <div class="form__group">
+          <input class="form__input" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email" placeholder="Adres e-mail" required>
+          <label class="form__label" for="InputEmail">Adres e-mail</label>
+        </div>
+        <button type="submit" class="form__button">Zresetuj hasło <span class="form__button--arrow">&rarr;</span></button>
+      </form>
     </div>
-    <button type="submit" class="btn btn-primary">Zresetuj hasło</button>
-  </form>
+  </div>
 </div>
 
 <%- include("partials/footer"); -%>

@@ -89,20 +89,12 @@
         $color-secondary);
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
-    &__left-side {
-
-    }
-
     &__list {
         list-style-type: none;
         font-weight: 500;
         font-size: 1.5rem;
         text-transform: uppercase;
         margin-left: 10rem;
-    }
-
-    &__menu-item {
-
     }
 
     &__link:link,

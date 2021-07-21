@@ -1,28 +1,79 @@
 <%- include("partials/header"); -%>
 
-<h1>Polskie Dzbany - załóż konto użytkownika</h1>
-<p> Po co Ci konto na serwisie Polskie Dzbany? Jedynie po to, by móc <a href="/episodes">sprawdzić nasze dane</a>. W niedalekiej przyszłości dojdzie na serwisie Polskie Dzbany opcja pisania komentarzy pod każdym odcinkiem - by wskazać nam ewentualne błędy. </p>
-<p> Jeśli chciałbyś dodawać odcinki, to zawsze możesz napisać na adres <a href="mailto:admin@polskiedzbany.pl">admin@polskiedzbany.pl</a>, natomiast na razie projekt jest wyłącznie dla zabawy grupki znajomych i nawet nie bierzemy odpowiedzialności za dane, które zbierzemy. Stanowią one jedynie tzw. dowód anegdotyczny. Poczytaj więcej o naszej metodologii <a href="/about">tutaj</a>. </p>
+<div class="container">
+  <h1>Załóż konto użytkownika</h1>
+  <p class="first-paragraph">Po co Ci konto na serwisie Polskie Dzbany? Jedynie po to, by móc <a href="/episodes"
+      class="first-paragraph__link">sprawdzić nasze dane</a>. W
+    niedalekiej przyszłości dojdzie na serwisie Polskie Dzbany opcja pisania komentarzy pod każdym odcinkiem - by
+    wskazać
+    nam ewentualne błędy.</p>
+  <p class="first-paragraph">Jeśli chciałbyś dodawać odcinki, to zawsze możesz napisać na adres <a
+      href="mailto:admin@polskiedzbany.pl" class="first-paragraph__link">admin@polskiedzbany.pl</a>, natomiast na razie
+    projekt jest wyłącznie dla
+    zabawy grupki znajomych i nawet nie bierzemy odpowiedzialności za dane, które zbierzemy. Stanowią one jedynie tzw.
+    dowód anegdotyczny. Poczytaj więcej o naszej metodologii <a href="/about" class="first-paragraph__link">tutaj</a>.
+  </p>
+  <p class="first-paragraph"> Jeżeli mimo wszystko chcesz założyć konto, wypełnij formularz poniżej.</p>
+
+  <div class="register">
+    <div class="register__form">
+      <form action="/register" method="POST" class="form">
+        <div class="form__group">
+          <input type="text" class="form__input"  id="InputName" aria-describedby="nameHelp" name="name" placeholder="Imię lub nick">
+          <label for="InputName" class="form__label">Imię lub nick</label>
+        </div>
+
+        <div class="form__group">
+          <input type="email" class="form__input" id="InputEmail" aria-describedby="emailHelp" name="email" placeholder="Adres e-mail">
+          <label for="InputEmail" class="form__label">Adres e-mail</label>
+        </div>
+
+        <div class="form__group">
+          <input type="password" class="form__input" id="password" name="password" placeholder="Hasło">
+          <label for="password" class="form__label">Hasło</label>
+        </div>
+
+        <div class="form__group">
+          <input type="password" class="form__input" id="confirm-password" name="confirm-password" placeholder="Powtórz hasło">
+          <label for="confirm-password" class="form__label">Powtórz hasło</label>
+        </div>
+
+        <button type="submit" class="form__button">Zarejestruj się <span class="form__button--arrow">&rarr;</span></button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- <h1>Polskie Dzbany - załóż konto użytkownika</h1>
+<p> Po co Ci konto na serwisie Polskie Dzbany? Jedynie po to, by móc <a href="/episodes">sprawdzić nasze dane</a>. W
+  niedalekiej przyszłości dojdzie na serwisie Polskie Dzbany opcja pisania komentarzy pod każdym odcinkiem - by wskazać
+  nam ewentualne błędy. </p>
+<p> Jeśli chciałbyś dodawać odcinki, to zawsze możesz napisać na adres <a
+    href="mailto:admin@polskiedzbany.pl">admin@polskiedzbany.pl</a>, natomiast na razie projekt jest wyłącznie dla
+  zabawy grupki znajomych i nawet nie bierzemy odpowiedzialności za dane, które zbierzemy. Stanowią one jedynie tzw.
+  dowód anegdotyczny. Poczytaj więcej o naszej metodologii <a href="/about">tutaj</a>. </p>
 <p> Jeżeli mimo wszystko chcesz założyć konto, wypełnij formularz poniżej. </p>
 <form action="/register" method="POST">
-    <div class="form-group">
-        <label for="InputName">Podaj imię lub nick</label>
-        <input type="text" class="form-control" id="InputName" aria-describedby="nameHelp" name="name">
-      </div>
-    <div class="form-group">
-      <label for="InputEmail">Podaj adres e-mail</label>
-      <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email">
-      <small id="emailHelp" class="form-text text-muted">Kto lubi spam? Na pewno nie my. Dlatego nigdy nie będziemy dzielić się Twoim mailem z nikim.</small>
-    </div>
-    <div class="form-group">
-      <label for="password">Hasło</label>
-      <input type="password" class="form-control" id="password" name="password">
-    </div>
-    <div class="form-group">
-        <label for="confirm-password">Powtórz hasło</label>
-        <input type="password" class="form-control" id="confirm-password" name="confirm-password">
-      </div>
-    <button type="submit" class="btn btn-primary">Zarejestruj się</button>
-  </form>
+  <div class="form-group">
+    <label for="InputName">Podaj imię lub nick</label>
+    <input type="text" class="form-control" id="InputName" aria-describedby="nameHelp" name="name">
+  </div>
+  <div class="form-group">
+    <label for="InputEmail">Podaj adres e-mail</label>
+    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email">
+    <small id="emailHelp" class="form-text text-muted">Kto lubi spam? Na pewno nie my. Dlatego nigdy nie będziemy
+      dzielić się Twoim mailem z nikim.</small>
+  </div>
+  <div class="form-group">
+    <label for="password">Hasło</label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+  <div class="form-group">
+    <label for="confirm-password">Powtórz hasło</label>
+    <input type="password" class="form-control" id="confirm-password" name="confirm-password">
+  </div>
+  <button type="submit" class="btn btn-primary">Zarejestruj się</button>
+</form> -->
 
 <%- include("partials/footer"); -%>

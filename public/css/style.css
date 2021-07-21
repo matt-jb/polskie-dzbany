@@ -134,6 +134,13 @@ h1 {
   letter-spacing: .2rem;
   margin-left: 4rem; }
 
+.secondary-heading {
+  font-size: 3rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  margin-left: 4rem; }
+
 .container {
   background-color: #faf9f9;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
@@ -145,7 +152,7 @@ h1 {
   text-align: justify;
   color: #333;
   letter-spacing: .2rem;
-  margin-top: 2rem;
+  margin: 2rem 4rem 2rem;
   position: relative; }
   .first-paragraph__link:link, .first-paragraph__link:visited {
     color: #fc5185;
@@ -165,7 +172,7 @@ h1 {
   flex-wrap: wrap;
   display: inline-flex;
   gap: 1rem;
-  margin: 2rem 0 2rem;
+  margin: 2rem 0 0;
   width: 100%; }
 
 .card {
@@ -233,6 +240,69 @@ h1 {
     padding: 0 1rem;
     background-image: linear-gradient(to right bottom, rgba(195, 236, 238, 0.75), rgba(63, 193, 201, 0.75)); }
 
-.login__form {
-  width: 50%;
-  padding: 4rem; }
+.login__form,
+.register__form,
+.forgot-password__form {
+  padding: 2rem 4rem 2rem; }
+
+.form__group:not(:last-child) {
+  margin-bottom: 1.5rem; }
+
+.form__label {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: .7rem 0 0 2rem;
+  display: block;
+  transition: all .2s ease-in-out;
+  color: #999; }
+
+.form__input {
+  font-size: 2rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  background-color: rgba(195, 236, 238, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 40rem;
+  transition: border-bottom .2s; }
+  .form__input::placeholder {
+    color: #777; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #c3ecee; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #fc5185; }
+    .form__input:focus:valid {
+      border-bottom: 3px solid #24d16c; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5rem); }
+
+.form__button {
+  width: 20rem;
+  height: 4rem;
+  text-align: left;
+  font-size: 1.5rem;
+  font-family: inherit;
+  letter-spacing: .1rem;
+  color: inherit;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+  border: solid 2px #2c878d;
+  background-color: #faf9f9;
+  transition: all .2s ease-in-out; }
+  .form__button span {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: .1rem;
+    transition: margin-left .2s; }
+  .form__button:hover {
+    border: solid 2px #fc5185;
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
+    .form__button:hover span {
+      margin-left: 1.5rem; }
