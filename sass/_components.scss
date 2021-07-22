@@ -14,39 +14,33 @@ h1 {
     margin-left: 4rem;
 }
 
+.modified {
+    font-size: 1.2rem;
+    color: $color-grey-dark-2;
+    letter-spacing: .2rem;
+    margin-left: 4rem;
+}
+
 .container {
     background-color: $color-grey-light-1;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     padding: 2rem 4rem 2rem;
     margin: 0;
+
+    &--bottom {
+        background-color: $color-white;
+    }
+
+    &--comment {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        box-shadow: 0 0 3rem rgba($color-black, .1);
+    }
 }
 
-.first-paragraph {
-    font-size: 1.6rem;
-    text-align: justify;
-    color: $color-grey-dark-1;
-    letter-spacing: .2rem;
-    margin: 2rem 4rem 2rem;
-    position: relative;
-
-    &__link:link,
-    &__link:visited {
-        color: $color-tertiary;
-        text-decoration: none;
-        transition: all .2s;
-    }
-
-    &__link:hover {
-        color: $color-tertiary-dark;
-    }
-
-    &__list {
-        font-size: 1.6rem;
-        text-align: left;
-        color: $color-grey-dark-1;
-        letter-spacing: .2rem;
-        margin: 2rem 0 0rem 2.4rem;
-    }
+.text-center {
+    text-align: center;
 }
 
 .cards {
@@ -154,17 +148,15 @@ h1 {
             rgba($color-secondary-light, .75),
             rgba($color-secondary, .75));
     }
-}
 
-.login,
-.register,
-.forgot-password {
-    &__form {
-        padding: 2rem 4rem 2rem;
+    &--accident-list {
+        height: 33rem;
     }
 }
 
 .form {
+    padding: 2rem 4rem 2rem;
+
     &__group:not(:last-child) {
         margin-bottom: 1.5rem;
     }
@@ -172,10 +164,14 @@ h1 {
     &__label {
         font-size: 1.5rem;
         font-weight: 400;
-        margin: .7rem 0 0 2rem;
+        margin: .7rem 0 1rem 2rem;
         display: block;
         transition: all .2s ease-in-out;
         color: $color-grey-dark-3;
+
+        &--comment {
+            margin: .7rem 0 1rem 0;
+        }
     }
 
     &__input {
@@ -183,6 +179,7 @@ h1 {
         font-family: inherit;
         color: inherit;
         padding: 1.5rem 2rem;
+        margin-right: 3rem;
         background-color: rgba($color-secondary-light, .5);
         border: none;
         border-bottom: 3px solid transparent;
@@ -206,6 +203,12 @@ h1 {
             &:valid {
                 border-bottom: 3px solid $color-green;
             }
+        }
+
+        &--comment {
+            width: 60rem;
+            height: 30rem;
+            resize: none;
         }
     }
 
@@ -245,5 +248,71 @@ h1 {
                 margin-left: 1.5rem;
             }
         }
+
+        &--comment {
+            width: 30rem;
+            text-align: center;
+            padding-right: 1.5rem;
+        }
+    }
+
+    &--brand {
+        width: 30rem;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-wide {
+    width: 30rem;
+}
+
+.bg-white {
+    background-color: $color-white;
+}
+
+.mtb-4 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+select {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, $color-grey-dark-3 50%),
+        linear-gradient(135deg, $color-grey-dark-3 50%, transparent 50%),
+        linear-gradient(to right, $color-grey-dark-3, $color-grey-dark-3);
+    background-position:
+        calc(100% - 25px) calc(1.2em + 2px),
+        calc(100% - 20px) calc(1.2em + 2px),
+        calc(100% - 2.5em) 0.7em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+.comment {
+    &__author {
+        font-size: 3.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        letter-spacing: .2rem;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
+    }
+
+    &__date {
+        text-align: right;
     }
 }

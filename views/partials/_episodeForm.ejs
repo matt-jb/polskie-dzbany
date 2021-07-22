@@ -1,59 +1,63 @@
-<% if (!locals.episode) { %>
-    <form action="/add" method="POST" class="episodeForm">
-<% } else { %>
-    <form action="/episodes/<%= locals.episode.slug %>/edit" method="POST" class="episodeForm">
-<% }%>
+<div class="episode-form">
+    <div class="episode-form__form">
+        <% if (!locals.episode) { %>
+            <form action="/add" method="POST" class="form flex">
+        <% } else { %>
+            <form action="/episodes/<%= locals.episode.slug %>/edit" method="POST" class="form flex">
+        <% }%>
 
-    <div class="row">
-        <div class="col-xl-3 col-md-4 col-sm-6">
-            <label for="series">Seria filmów:</label>
+        <div class="form__group">
             <% if (!locals.episode) { %>
-                <select id="series" name="series">
+                <select id="series" name="series" class="form__input">
                     <option value="Polskie Drogi">Polskie Drogi</option>
                     <option value="Stop Cham">Stop Cham</option>
                 </select>
             <% } else { %>
-                <select id="series" name="series">
+                <select id="series" name="series" class="form__input">
                     <option value="<%= locals.episode.series %>"><%= locals.episode.series %></option>
                 </select>
             <% }%>
+            <label for="series" class="form__label">Seria filmów</label>
         </div>
 
-        <% if (!locals.episode) { %>
-            <div class="col-xl-3 col-md-3 col-sm-6">
-                <label for="episodeNumber">Numer odcinka:</label>
-                <input type="number" id="episodeNumber" name="episodeNumber" min="1" max="999" required>
-            </div>
-            <input type="submit" value="Wgraj dane z odcinka!">
-        <% } else { %>
-            <div class="col-xl-3 col-md-4 col-sm-6">
-                <label for="episodeNumber">Numer odcinka:</label>
-                <input type="number" id="episodeNumber" name="episodeNumber" value="<%= locals.episode.episodeNumber %>" min="<%= locals.episode.episodeNumber %>" max="<%= locals.episode.episodeNumber %>" required>
-            </div>
-            <input type="submit" value="Edytuj dane odcinka!">
-        <% }%>
-
-    </div>
-
-    <br>
-
-        <p>Wprowadź liczbę wypadków z danego odcinka.</p>
-        <p>Pamiętaj, że w razie pomyłki będziesz mógł te pola edytować w późniejszym czasie.</p>
-        <div class="row">
-            
+        <div class="form__group">
             <% if (!locals.episode) { %>
-            <%  h.cars.forEach(function(car) { %>
-            <div class="col-xl-2 col-md-6 col-sm-6"><label for="<%= car %>"><%= car %>: </label></div>
-            <div class="col-xl-2 col-md-6 col-sm-6"><input type="number" id="<%= car %>"
-                    name="brandsInEpisode.<%= car %>" value="0" min="0" required></div>
-            <% }); %>
+                <input type="number" id="episodeNumber" name="episodeNumber" min="1" max="999" class="form__input" required>
+                <label for="episodeNumber" class="form__label">Numer odcinka</label>
             <% } else { %>
-                <% for (const [key, value] of Object.entries((episode.brandsInEpisode).toJSON())) { %>
-                    <div class="col-xl-2 col-md-6 col-sm-6"><label for="brandsInEpisode.<%= key %>"><%= key %>: </label></div>
-                    <div class="col-xl-2 col-md-6 col-sm-6"><input type="number"
-                    name="brandsInEpisode.<%= key %>" value="<%= value %>" min="0" required></div>
-                <% } %>
-            <% } %>
+                <input type="number" id="episodeNumber" name="episodeNumber" value="<%= locals.episode.episodeNumber %>" min="<%= locals.episode.episodeNumber %>" max="<%= locals.episode.episodeNumber %>" class="form__input" required>
+                <label for="episodeNumber" class="form__label">Numer odcinka</label>
+            <% }%>
         </div>
 
-</form>
+        <p class="first-paragraph first-paragraph--episodes">Wprowadź liczbę wypadków z danego odcinka. Pamiętaj, że w razie pomyłki będziesz mógł te pola edytować w późniejszym czasie.</p>
+        
+        <div class="flex">
+        <% if (!locals.episode) { %>
+            <%  h.cars.forEach(function(car) { %>
+                <div class="form__group">
+                    <input type="number" id="<%= car %>" name="brandsInEpisode.<%= car %>" value="0" min="0" class="form__input form--brand" required>
+                    <label for="<%= car %>" class="form__label"><%= car %></label>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <% for (const [key, value] of Object.entries((episode.brandsInEpisode).toJSON())) { %>
+                <div class="form__group">
+                    <input type="number" name="brandsInEpisode.<%= key %>" value="<%= value %>" min="0" class="form__input form--brand" required>
+                    <label for="brandsInEpisode.<%= key %>" class="form__label"><%= key %></label>
+                 </div>
+            <% } %>
+        <% } %>
+        </div>
+        
+        <div class="form__group">
+            <% if (!locals.episode) { %>
+                <button type="submit" class="form__button btn-wide">Wgraj dane z odcinka <span class="form__button--arrow">&rarr;</span></button>
+            <% } else { %>
+                <button type="submit" class="form__button btn-wide">Edytuj dane odcinka <span class="form__button--arrow">&rarr;</span></button>
+            <% }%>
+        </div>
+
+        </form>
+    </div>
+</div>

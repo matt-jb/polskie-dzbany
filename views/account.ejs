@@ -1,27 +1,27 @@
 <%- include("partials/header"); -%>
 
-<h2>Edytuj swoje konto</h2>
-<br>
-<form action="/account" method="POST">
-    <div class="form-group">
-        <label for="InputName">Twoje imię lub nick</label>
-        <input type="text" class="form-control" id="InputName" aria-describedby="nameHelp" name="name"
-            value="<%= locals.user.name %>" required>
+<div class="container">
+  <h1>Edytuj swoje konto</h1>
+  
+  <div class="edit-account">
+    <div class="edit-account__form">
+      <form action="/account" method="POST" class="form">
+
+        <div class="form__group">
+          <input type="text" class="form__input" id="InputName" aria-describedby="nameHelp" name="name" value="<%= locals.user.name %>" required>
+          <label for="InputName" class="form__label">Imię lub nick</label>
+        </div>
+
+        <div class="form__group">
+          <input type="email" class="form__input" id="InputEmail" aria-describedby="emailHelp" name="email" value="<%= locals.user.email %>" required>
+          <label for="InputEmail" class="form__label">Adres e-mail</label>
+        </div>
+
+        <button type="submit" class="form__button">Zaktualizuj <span class="form__button--arrow">&rarr;</span></button>
+
+      </form>
     </div>
-    <div class="form-group">
-        <label for="InputEmail">Twój adres e-mail</label>
-        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" name="email"
-            value="<%= locals.user.email %>" required>
-    </div>
-    <!-- <div class="form-group">
-      <label for="password">Twoje Hasło</label>
-      <input type="password" class="form-control" id="password" name="password" required>
-    </div>
-    <div class="form-group">
-        <label for="confirm-password">Powtórz hasło</label>
-        <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
-      </div> -->
-    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
-</form>
+  </div>
+</div>
 
 <%- include("partials/footer"); -%>

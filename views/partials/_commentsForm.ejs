@@ -1,8 +1,11 @@
-<form action="/commentsForm/<%=episode._id%>" method="POST" class="text-center">
-    <div class="form-group text-center mt-5">
-        <label for="text text-center">Napisz komentarz:</label><br>
-        <textarea class="commentsForm text-center" rows="4" cols="100" type="textarea" name="text"
-            placeholder="Jeśli uważasz, że pomyliliśmy się w spisywaniu ilości wypadków samochodów danej marki w tym odcinku, napisz o tym." required></textarea>
+<div class="add-comment">
+    <div class="comment__form">
+        <form action="/commentsForm/<%=episode._id%>" method="POST" class="form text-center">
+            <div class="form__group">
+                <label for="text" class="form__label form__label--comment">Zostaw komentarz:</label>
+                <textarea class="form__input form__input--comment" type="textarea" name="text" placeholder="Twój komentarz..."></textarea>
+            </div>
+            <button type="submit" class="form__button form__button--comment">Napisz komentarz <span class="form__button--arrow">&rarr;</span></button>
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary text-center mb-5">Zostaw komentarz</button>
-</form>
+</div>

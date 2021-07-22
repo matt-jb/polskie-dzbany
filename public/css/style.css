@@ -127,26 +127,6 @@ body {
     max-width: 20rem;
     margin: 0 auto; }
 
-h1 {
-  font-size: 5rem;
-  color: #333;
-  text-transform: uppercase;
-  letter-spacing: .2rem;
-  margin-left: 4rem; }
-
-.secondary-heading {
-  font-size: 3rem;
-  color: #333;
-  text-transform: uppercase;
-  letter-spacing: .2rem;
-  margin-left: 4rem; }
-
-.container {
-  background-color: #faf9f9;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  padding: 2rem 4rem 2rem;
-  margin: 0; }
-
 .first-paragraph {
   font-size: 1.6rem;
   text-align: justify;
@@ -165,7 +145,56 @@ h1 {
     text-align: left;
     color: #333;
     letter-spacing: .2rem;
-    margin: 2rem 0 0rem 2.4rem; }
+    margin: 2rem 4rem 2rem 6.4rem; }
+  .first-paragraph--episodes {
+    margin: 2rem 0 2rem; }
+  .first-paragraph--comments {
+    margin: auto;
+    width: 50%;
+    border-top: 0.15rem solid #777;
+    border-bottom: 0.15rem solid #777;
+    padding: 2rem 0 2rem 0;
+    letter-spacing: .5rem;
+    font-size: 1.2rem;
+    color: #777;
+    transition: all .15s ease-in-out; }
+    .first-paragraph--comments:hover {
+      width: 52%; }
+
+h1 {
+  font-size: 5rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  margin-left: 4rem; }
+
+.secondary-heading {
+  font-size: 3rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  margin-left: 4rem; }
+
+.modified {
+  font-size: 1.2rem;
+  color: #777;
+  letter-spacing: .2rem;
+  margin-left: 4rem; }
+
+.container {
+  background-color: #faf9f9;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  padding: 2rem 4rem 2rem;
+  margin: 0; }
+  .container--bottom {
+    background-color: #fff; }
+  .container--comment {
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1); }
+    .container--comment:not(:last-child) {
+      margin-bottom: 2rem; }
+
+.text-center {
+  text-align: center; }
 
 .cards {
   justify-content: space-between;
@@ -239,70 +268,115 @@ h1 {
   .card__heading-span {
     padding: 0 1rem;
     background-image: linear-gradient(to right bottom, rgba(195, 236, 238, 0.75), rgba(63, 193, 201, 0.75)); }
+  .card--accident-list {
+    height: 33rem; }
 
-.login__form,
-.register__form,
-.forgot-password__form {
+.form {
   padding: 2rem 4rem 2rem; }
-
-.form__group:not(:last-child) {
-  margin-bottom: 1.5rem; }
-
-.form__label {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: .7rem 0 0 2rem;
-  display: block;
-  transition: all .2s ease-in-out;
-  color: #999; }
-
-.form__input {
-  font-size: 2rem;
-  font-family: inherit;
-  color: inherit;
-  padding: 1.5rem 2rem;
-  background-color: rgba(195, 236, 238, 0.5);
-  border: none;
-  border-bottom: 3px solid transparent;
-  width: 40rem;
-  transition: border-bottom .2s; }
-  .form__input::placeholder {
-    color: #777; }
-  .form__input:focus {
-    outline: none;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #c3ecee; }
-    .form__input:focus:invalid {
-      border-bottom: 3px solid #fc5185; }
-    .form__input:focus:valid {
-      border-bottom: 3px solid #24d16c; }
-
-.form__input:placeholder-shown + .form__label {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-5rem); }
-
-.form__button {
-  width: 20rem;
-  height: 4rem;
-  text-align: left;
-  font-size: 1.5rem;
-  font-family: inherit;
-  letter-spacing: .1rem;
-  color: inherit;
-  padding-left: 2rem;
-  margin-bottom: 2rem;
-  border: solid 2px #2c878d;
-  background-color: #faf9f9;
-  transition: all .2s ease-in-out; }
-  .form__button span {
+  .form__group:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .form__label {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: .7rem 0 1rem 2rem;
+    display: block;
+    transition: all .2s ease-in-out;
+    color: #999; }
+    .form__label--comment {
+      margin: .7rem 0 1rem 0; }
+  .form__input {
     font-size: 2rem;
-    font-weight: 700;
-    margin-left: .1rem;
-    transition: margin-left .2s; }
-  .form__button:hover {
-    border: solid 2px #fc5185;
-    transform: translateY(-0.2rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
-    .form__button:hover span {
-      margin-left: 1.5rem; }
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    margin-right: 3rem;
+    background-color: rgba(195, 236, 238, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 40rem;
+    transition: border-bottom .2s; }
+    .form__input::placeholder {
+      color: #777; }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #c3ecee; }
+      .form__input:focus:invalid {
+        border-bottom: 3px solid #fc5185; }
+      .form__input:focus:valid {
+        border-bottom: 3px solid #24d16c; }
+    .form__input--comment {
+      width: 60rem;
+      height: 30rem;
+      resize: none; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5rem); }
+  .form__button {
+    width: 20rem;
+    height: 4rem;
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: inherit;
+    letter-spacing: .1rem;
+    color: inherit;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    border: solid 2px #2c878d;
+    background-color: #faf9f9;
+    transition: all .2s ease-in-out; }
+    .form__button span {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-left: .1rem;
+      transition: margin-left .2s; }
+    .form__button:hover {
+      border: solid 2px #fc5185;
+      transform: translateY(-0.2rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
+      .form__button:hover span {
+        margin-left: 1.5rem; }
+    .form__button--comment {
+      width: 30rem;
+      text-align: center;
+      padding-right: 1.5rem; }
+  .form--brand {
+    width: 30rem; }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap; }
+
+.btn-wide {
+  width: 30rem; }
+
+.bg-white {
+  background-color: #fff; }
+
+.mtb-4 {
+  margin-top: 4rem;
+  margin-bottom: 4rem; }
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #999 50%), linear-gradient(135deg, #999 50%, transparent 50%), linear-gradient(to right, #999, #999);
+  background-position: calc(100% - 25px) calc(1.2em + 2px), calc(100% - 20px) calc(1.2em + 2px), calc(100% - 2.5em) 0.7em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat; }
+
+.comment__author {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: .2rem; }
+
+.comment__text {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+
+.comment__date {
+  text-align: right; }

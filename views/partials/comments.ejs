@@ -1,47 +1,22 @@
 <% if(Object.keys(episode.comments).length > 0) { %>
+    <% episode.comments.forEach(comment => { %>
+        <div class="container container--comment bg-white">
+            <div class="comment">
+                <div class="comment__author">
+                    <%= comment.author.name %>
+                </div>
 
-    <div class="card text-center">
-        <div class="card-header">
-            <strong>Komentarze</strong>
-        </div>
-        <div class="card-body">
+                <div class="comment__text">
+                    <%= comment.text %>
+                </div>
 
-        </div>
-        <div class="container mx-auto">
-          <div class="row">
-            <% episode.comments.forEach(comment => { %>
-            <div class="card mr-1 ml-1 mt-1 mb-5 mx-auto" style="width: 80%;">
-              <div class="card-body">
-                <h5 class="card-title text-left"><%= comment.author.name %></h5>
-                <p class="card-text text-left"><%= comment.text %></p>
-                <p class="text-muted small text-left">Napisano: <%= moment(comment.created).fromNow(); %></p>
-              </div>
+                <div class="comment__date modified" title="<%= moment(comment.created).format("dddd, D.MM.YYYY o HH:mm:ss"); %>">
+                    Napisano: <%= moment(comment.created).fromNow(); %>
+                </div>
             </div>
-            <% }); %>
-          </div>
         </div>
-        <div class="card-footer text-muted"></div>
-      </div>
+    <% }); %>
 
 <% } else { %>
-
-    <div class="card text-center">
-        <div class="card-header">
-            <strong>Komentarze</strong>
-        </div>
-        <div class="card-body">
-
-        </div>
-        <div class="container mx-auto">
-          <div class="row">
-            <div class="card mr-1 ml-1 mt-1 mb-5 mx-auto" style="width: 80%;">
-              <div class="card-body">
-                <h5 class="card-title">Brak komentarzy!</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer text-muted"></div>
-      </div>
-
+    <p class="first-paragraph first-paragraph--comments text-center">Brak innych komentarzy.</p>
 <% } %>

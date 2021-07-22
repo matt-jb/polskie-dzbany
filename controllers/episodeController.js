@@ -20,7 +20,7 @@ exports.getEpisodes = async (req, res) => {
 
 exports.editEpisode = async (req, res) => {
     const episode = await Episode.findOne({ slug: req.params.slug });
-    res.render('add', { title: `Edytuj odcinek ${episode.series} ${episode.episodeNumber}`, episode });
+    res.render('edit', { title: `Edytuj odcinek ${episode.series} ${episode.episodeNumber}`, episode });
 };
 
 exports.displayEpisode = async (req, res) => {

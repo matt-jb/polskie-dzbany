@@ -1,16 +1,14 @@
 <% if (locals.flashes) { %>
-
-<% for (let [type, messages] of Object.entries(locals.flashes)) { %>
-    <% for (let [types, message] of Object.entries(messages)) { %>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-                <div class="alert alert_<%= type %>"> <button aria-hidden="true" data-dismiss="alert" class="close"
-                    type="button">×</button> <strong><%=message%></strong> </div>
+    <% for (let [type, messages] of Object.entries(locals.flashes)) { %>
+        <% for (let [types, message] of Object.entries(messages)) { %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <div class="alert alert_<%= type %>"> <button aria-hidden="true" data-dismiss="alert" class="close"
+                        type="button">×</button> <strong><%=message%></strong> </div>
+                </div>
             </div>
         </div>
-    </div>
+        <% } %>
     <% } %>
-<% } %>
-
 <% } %>

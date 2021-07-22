@@ -151,3 +151,52 @@
         margin: 0 auto;
     }
 }
+
+.first-paragraph {
+    font-size: 1.6rem;
+    text-align: justify;
+    color: $color-grey-dark-1;
+    letter-spacing: .2rem;
+    margin: 2rem 4rem 2rem;
+    position: relative;
+
+    &__link:link,
+    &__link:visited {
+        color: $color-tertiary;
+        text-decoration: none;
+        transition: all .2s;
+    }
+
+    &__link:hover {
+        color: $color-tertiary-dark;
+    }
+
+    &__list {
+        font-size: 1.6rem;
+        text-align: left;
+        color: $color-grey-dark-1;
+        letter-spacing: .2rem;
+        margin: 2rem 4rem 2rem 6.4rem;
+    }
+
+    &--episodes {
+        margin: 2rem 0 2rem;
+    }
+
+    &--comments {
+        margin: auto;
+        width: 50%;
+        border-top: .15rem solid $color-grey-dark-2;
+        border-bottom: .15rem solid $color-grey-dark-2;
+        padding: 2rem 0 2rem 0;
+        letter-spacing: .5rem;
+        font-size: 1.2rem;
+        color: $color-grey-dark-2;
+        
+        transition: all .15s ease-in-out;
+        
+        &:hover {
+            width: 52%;
+        }
+    }
+}
