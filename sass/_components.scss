@@ -44,10 +44,10 @@ h1 {
 }
 
 .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 35rem);
     justify-content: space-between;
-    flex-wrap: wrap;
-    display: inline-flex;
-    gap: 1rem;
+    grid-gap: 1rem;
     margin: 2rem 0 0;
     width: 100%;
 }
@@ -314,5 +314,61 @@ select {
 
     &__date {
         text-align: right;
+    }
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    padding-left: 8rem;
+    box-shadow: none;
+    height: 8rem;
+
+    &:not(.visible) {
+        display: none;
+    }
+
+    &__success {
+        background-color: $color-green-dark;
+    }
+
+    &__error {
+        background-color: $color-red;
+    }
+
+    &__icon {
+        width: 5rem;
+    }
+
+    &__svg {
+        width: 5rem;
+        height: 5rem;
+        fill: $color-grey-light-1;
+    }
+
+    &__message-container {
+        flex: 1;
+        
+    }
+
+    &__message {
+        color: $color-grey-light-1;
+    }
+
+    &__close {
+        border-radius: 10;
+
+        &-button {
+            width: 2.5rem;
+            height: 2.5rem;
+            fill: $color-grey-light-1;
+            cursor: pointer;
+
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
     }
 }

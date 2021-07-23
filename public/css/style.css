@@ -197,10 +197,10 @@ h1 {
   text-align: center; }
 
 .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 35rem);
   justify-content: space-between;
-  flex-wrap: wrap;
-  display: inline-flex;
-  gap: 1rem;
+  grid-gap: 1rem;
   margin: 2rem 0 0;
   width: 100%; }
 
@@ -380,3 +380,36 @@ select {
 
 .comment__date {
   text-align: right; }
+
+.alert {
+  display: flex;
+  align-items: center;
+  padding-left: 8rem;
+  box-shadow: none;
+  height: 8rem; }
+  .alert:not(.visible) {
+    display: none; }
+  .alert__success {
+    background-color: #0fd160; }
+  .alert__error {
+    background-color: #fc3232; }
+  .alert__icon {
+    width: 5rem; }
+  .alert__svg {
+    width: 5rem;
+    height: 5rem;
+    fill: #faf9f9; }
+  .alert__message-container {
+    flex: 1; }
+  .alert__message {
+    color: #faf9f9; }
+  .alert__close {
+    border-radius: 10; }
+    .alert__close-button {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: #faf9f9;
+      cursor: pointer;
+      transition: all .2s ease-in-out; }
+      .alert__close-button:hover {
+        transform: scale(1.1); }

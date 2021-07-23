@@ -1,14 +1,21 @@
 <% if (locals.flashes) { %>
     <% for (let [type, messages] of Object.entries(locals.flashes)) { %>
         <% for (let [types, message] of Object.entries(messages)) { %>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-                    <div class="alert alert_<%= type %>"> <button aria-hidden="true" data-dismiss="alert" class="close"
-                        type="button">×</button> <strong><%=message%></strong> </div>
+            <div class="container alert alert__<%= type %> visible">
+                <div class="alert__icon">
+                    <svg class="alert__svg">
+                        <use xlink:href="img/sprite.svg#<%= type %>"></use>
+                    </svg>
+                </div>
+                <div class="alert__message-container">
+                    <p class="first-paragraph alert__message"><%=message%></p>
+                </div>
+                <div class="alert__close">
+                    <svg class="alert__close-button" onclick="this.parentNode.parentNode.classList.remove('visible')">
+                        <use xlink:href="img/sprite.svg#icon-cross"></use>
+                    </svg>
                 </div>
             </div>
-        </div>
         <% } %>
     <% } %>
 <% } %>
