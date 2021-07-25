@@ -15,11 +15,13 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  overflow-x: hidden;
-  position: relative;
   max-width: 120rem;
   margin: 2rem auto 2rem;
   padding: 0 2rem; }
+  @media only screen and (max-width: 75em) {
+    body {
+      margin: 0;
+      padding: 0; } }
 
 .nav-main {
   background: linear-gradient(to right bottom, #364f6b, #8695a6);
@@ -203,6 +205,9 @@ h1 {
   grid-gap: 1rem;
   margin: 2rem 0 0;
   width: 100%; }
+  @media only screen and (max-width: 68.75em) {
+    .cards {
+      grid-template-columns: repeat(auto-fill, 49%); } }
 
 .card {
   transition: all, .2s;
@@ -211,10 +216,16 @@ h1 {
   overflow: hidden;
   position: relative;
   margin-bottom: 2rem; }
+  @media only screen and (max-width: 68.75em) {
+    .card {
+      height: 56rem; } }
   .card__image {
     background-size: cover;
     max-width: 35rem;
     margin-bottom: 1rem; }
+    @media only screen and (max-width: 68.75em) {
+      .card__image {
+        max-width: 100%; } }
   .card__heading {
     font-size: 3rem;
     color: #333;
@@ -224,14 +235,22 @@ h1 {
     position: absolute;
     top: 18rem;
     right: 2rem; }
+    @media only screen and (max-width: 68.75em) {
+      .card__heading {
+        top: 25rem;
+        font-size: 4rem; } }
   .card__list {
     list-style: none;
     width: 80%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative;
+    font-size: 1.6rem; }
+    @media only screen and (max-width: 56.25em) {
+      .card__list {
+        font-size: 3rem; } }
     .card__list [class*="--item"] {
       color: #999;
       text-align: center;
-      font-size: 1.6rem;
       padding: 1.5rem 1rem;
       position: relative; }
       .card__list [class*="--item"]:not(:last-child):before {

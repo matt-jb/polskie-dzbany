@@ -50,6 +50,10 @@ h1 {
     grid-gap: 1rem;
     margin: 2rem 0 0;
     width: 100%;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: repeat(auto-fill, 49%);
+    }
 }
 
 .card {
@@ -60,10 +64,18 @@ h1 {
     position: relative;
     margin-bottom: 2rem;
 
+    @media only screen and (max-width: $bp-large) {
+        height: 56rem;
+    }
+
     &__image {
         background-size: cover;
         max-width: 35rem;
         margin-bottom: 1rem;
+
+        @media only screen and (max-width: $bp-large) {
+            max-width: 100%;
+        }
     }
 
     &__heading {
@@ -76,17 +88,26 @@ h1 {
         top: 18rem;
         right: 2rem;
         
+        @media only screen and (max-width: $bp-large) {
+            top: 25rem;
+            font-size: 4rem;
+        }
     }
 
     &__list {
         list-style: none;
         width: 80%;
         margin: 0 auto;
+        position: relative;
+        font-size: 1.6rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 3rem;
+        }
 
         & [class*="--item"] {
             color: $color-grey-dark-3;
             text-align: center;
-            font-size: 1.6rem;
             padding: 1.5rem 1rem;
             position: relative;
 

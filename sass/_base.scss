@@ -28,10 +28,10 @@ $color-white: #fff;
 
 $font-main: 'Montserrat', sans-serif;
 
-// $bp-largest: 75em;     // 1200px
-// $bp-large: 68.75em;    // 1100px
-// $bp-medium: 56.25em;   // 900px
-// $bp-small: 37.5em;     // 600px
+$bp-largest: 75em;      // 1200px
+$bp-large: 68.75em;     // 1100px
+$bp-medium: 56.25em;    // 900px (doesn't work on Chrome for some odd reason)
+$bp-small: 37.5em;   // 600px
 // $bp-smallest: 31.25em; // 500px
 
 * {
@@ -47,16 +47,19 @@ $font-main: 'Montserrat', sans-serif;
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; // 1 rem = 10 px, 10 px / 16 px = 62.5%
+    font-size: 62.5%;   // 1 rem = 10 px, 10 px / 16 px = 62.5%
 }
 
 body {
     font-family: $font-main;
     font-weight: 400;
     line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
     max-width: 120rem;
     margin: 2rem auto 2rem;
     padding: 0 2rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        padding: 0;
+    }
 }
