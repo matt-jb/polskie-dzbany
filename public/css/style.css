@@ -245,9 +245,6 @@ h1 {
     margin: 0 auto;
     position: relative;
     font-size: 1.6rem; }
-    @media only screen and (max-width: 56.25em) {
-      .card__list {
-        font-size: 3rem; } }
     .card__list [class*="--item"] {
       color: #999;
       text-align: center;

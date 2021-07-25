@@ -28,11 +28,11 @@ $color-white: #fff;
 
 $font-main: 'Montserrat', sans-serif;
 
-$bp-largest: 75em;      // 1200px
-$bp-large: 68.75em;     // 1100px
-$bp-medium: 56.25em;    // 900px (doesn't work on Chrome for some odd reason)
-$bp-small: 37.5em;   // 600px
-// $bp-smallest: 31.25em; // 500px
+$bp-largest: 75em;      // 1200 px
+$bp-large: 68.75em;     // 1100 px
+$bp-medium: 50em;       // 800 px
+// $bp-small: 37.5em;   // 600 px
+// $bp-smallest: 31.25em; // 500 px
 
 * {
     margin: 0;
