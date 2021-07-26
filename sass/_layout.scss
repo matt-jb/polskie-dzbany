@@ -14,17 +14,37 @@
     text-transform: uppercase;
     letter-spacing: .2rem;
 
+    &__dzbany {
+        @media only screen and (max-width: $bp-medium) {
+            letter-spacing: .71rem;
+        }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: row;
+    }
+
     &__name {
         font-size: 6rem;
         font-weight: 600;
-        letter-spacing: 0.6rem;
+        letter-spacing: .6rem;
         text-decoration: none;
         color: $color-grey-light-3;
         margin-top: 1rem;
         transition: all .1s;
-        
+
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 4.2rem;
+            margin-left: 2rem;
+            margin-top: 0;
+        }
+
         &:hover {
-            letter-spacing: 0.7rem;
+            letter-spacing: .7rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                letter-spacing: .6rem;
+            }
         }
     }
 }
@@ -33,8 +53,12 @@
     display: flex;
     align-items: stretch;
     justify-content: space-between;
-    width: 80%;
+    width: 82%;
     margin-bottom: 1rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        width: 92%;
+    }
 
     &__item {
         display: block;

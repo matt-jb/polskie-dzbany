@@ -10,8 +10,10 @@
 <section class="cards">
   <% cars.forEach(function(car){ %>
     <div class="card">
-      <img class="card__image" src="./img/cars/<%= car.brand %>.jpg" alt="Samochód marki <%= car.brand %>">
-      <h2 class="card__heading"><span class="card__heading-span"><%= car.brand %></span></h2>
+      <div class="card__image-box">
+        <img class="card__image" src="./img/cars/<%= car.brand %>.jpg" alt="Samochód marki <%= car.brand %>">
+        <h2 class="card__heading"><span class="card__heading-span"><%= car.brand %></span></h2>
+      </div>
       <ul class="card__list">
         <li class="card__list--item-cars">Samochody w bazie: <span class="card__value"><%= car.numberOfCars %></span></li>
         <li class="card__list--item-accidents">Wypadki w bazie: <span class="card__value"><%= accidents[0][car.brand] %></span></li>

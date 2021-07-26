@@ -33,23 +33,40 @@ body {
   align-items: center;
   text-transform: uppercase;
   letter-spacing: .2rem; }
+  @media only screen and (max-width: 56.25em) {
+    .nav-main__dzbany {
+      letter-spacing: .71rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .nav-main {
+      flex-direction: row; } }
   .nav-main__name {
     font-size: 6rem;
     font-weight: 600;
-    letter-spacing: 0.6rem;
+    letter-spacing: .6rem;
     text-decoration: none;
     color: #f0eeee;
     margin-top: 1rem;
     transition: all .1s; }
+    @media only screen and (max-width: 56.25em) {
+      .nav-main__name {
+        font-size: 4.2rem;
+        margin-left: 2rem;
+        margin-top: 0; } }
     .nav-main__name:hover {
-      letter-spacing: 0.7rem; }
+      letter-spacing: .7rem; }
+      @media only screen and (max-width: 56.25em) {
+        .nav-main__name:hover {
+          letter-spacing: .6rem; } }
 
 .menu {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  width: 80%;
+  width: 82%;
   margin-bottom: 1rem; }
+  @media only screen and (max-width: 56.25em) {
+    .menu {
+      width: 92%; } }
   .menu__item {
     display: block;
     flex: 0 1 auto;
@@ -188,6 +205,9 @@ h1 {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   padding: 2rem 4rem 2rem;
   margin: 0; }
+  @media only screen and (max-width: 56.25em) {
+    .container {
+      padding: 2rem 1rem 2rem; } }
   .container--bottom {
     background-color: #fff; }
   .container--comment {
@@ -214,11 +234,12 @@ h1 {
   height: 44rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  position: relative;
   margin-bottom: 2rem; }
   @media only screen and (max-width: 68.75em) {
     .card {
       height: 56rem; } }
+  .card__image-box {
+    position: relative; }
   .card__image {
     background-size: cover;
     max-width: 35rem;
@@ -233,16 +254,8 @@ h1 {
     text-align: right;
     letter-spacing: .1rem;
     position: absolute;
-    top: 18rem;
+    bottom: 3rem;
     right: 2rem; }
-    @media only screen and (max-width: 68.75em) {
-      .card__heading {
-        top: 25rem;
-        font-size: 4rem; } }
-    @media only screen and (max-width: 56.25em) {
-      .card__heading {
-        top: 30%;
-        font-size: 4rem; } }
   .card__list {
     list-style: none;
     width: 80%;

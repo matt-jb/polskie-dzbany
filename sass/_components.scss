@@ -27,6 +27,10 @@ h1 {
     padding: 2rem 4rem 2rem;
     margin: 0;
 
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem 1rem 2rem;
+    }
+
     &--bottom {
         background-color: $color-white;
     }
@@ -61,11 +65,14 @@ h1 {
     height: 44rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     overflow: hidden;
-    position: relative;
     margin-bottom: 2rem;
 
     @media only screen and (max-width: $bp-large) {
         height: 56rem;
+    }
+
+    &__image-box {
+        position: relative;
     }
 
     &__image {
@@ -85,18 +92,8 @@ h1 {
         text-align: right;
         letter-spacing: .1rem;
         position: absolute;
-        top: 18rem;
+        bottom: 3rem;
         right: 2rem;
-        
-        @media only screen and (max-width: $bp-large) {
-            top: 25rem;
-            font-size: 4rem;
-        }
-
-        @media only screen and (max-width: $bp-medium) {
-            top: 30%;
-            font-size: 4rem;
-        }
     }
 
     &__list {
