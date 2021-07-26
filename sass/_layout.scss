@@ -91,7 +91,7 @@
 
     &__list {
         list-style-type: none;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 1.5rem;
         text-transform: uppercase;
         margin-left: 10rem;
@@ -116,7 +116,7 @@
     }
 
     &__title {
-        font-weight: 800;
+        font-weight: 700;
         font-size: 4rem;
         text-transform: uppercase;
         text-align: center;
@@ -146,7 +146,7 @@
     &__paragraph {
         color: $color-grey-dark-1;
         font-size: 1.4rem;
-        font-weight: 300;
+        font-weight: 400;
         max-width: 20rem;
         margin: 0 auto;
     }
