@@ -4,6 +4,12 @@ h1 {
     text-transform: uppercase;
     letter-spacing: .2rem;
     margin-left: 4rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+        font-size: 3.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 .secondary-heading {
@@ -12,6 +18,12 @@ h1 {
     text-transform: uppercase;
     letter-spacing: .2rem;
     margin-left: 4rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 2.3rem;
+    }
 }
 
 .modified {
@@ -29,6 +41,10 @@ h1 {
 
     @media only screen and (max-width: $bp-medium) {
         padding: 2rem 1rem 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        padding: 1.5rem 1rem 1.5rem;
     }
 
     &--bottom {
@@ -58,30 +74,32 @@ h1 {
     @media only screen and (max-width: $bp-large) {
         grid-template-columns: repeat(auto-fill, 49%);
     }
+
+    @media only screen and (max-width: $bp-xsmall) {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
 }
 
 .card {
     transition: all, .2s;
-    height: 44rem;
+    height: 45rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     overflow: hidden;
     margin-bottom: 2rem;
-
-    @media only screen and (max-width: $bp-large) {
-        height: 56rem;
-    }
 
     &__image-box {
         position: relative;
     }
 
     &__image {
-        background-size: cover;
-        max-width: 35rem;
+        object-fit: cover;
+        overflow: hidden;
+        width: 35rem;
         margin-bottom: 1rem;
 
         @media only screen and (max-width: $bp-large) {
-            max-width: 100%;
+            width: 100%;
+            height: 25rem;
         }
     }
 
@@ -102,6 +120,10 @@ h1 {
         margin: 0 auto;
         position: relative;
         font-size: 1.6rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.5rem;
+        }
 
         & [class*="--item"] {
             color: $color-grey-dark-3;
@@ -176,6 +198,10 @@ h1 {
 .form {
     padding: 2rem 4rem 2rem;
 
+    @media only screen and (max-width: $bp-smallest) {
+        padding: 2rem 1rem 2rem;
+    }
+
     &__group:not(:last-child) {
         margin-bottom: 1.5rem;
     }
@@ -203,6 +229,10 @@ h1 {
         border: none;
         border-bottom: 3px solid transparent;
         width: 40rem;
+
+        @media only screen and (max-width: $bp-xsmall) {
+            width: 100%;
+        }
 
         transition: border-bottom .2s;
 
@@ -367,7 +397,10 @@ select {
 
     &__message-container {
         flex: 1;
-        
+
+        @media only screen and (max-width: $bp-medium) {
+            max-width: 81%;
+        }
     }
 
     &__message {

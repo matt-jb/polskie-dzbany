@@ -26,16 +26,26 @@
         text-decoration: none;
         color: $color-grey-light-3;
         margin-top: 1rem;
-        transition: all .1s;
+        transition: letter-spacing .1s, transform .4s, visibility .25s, opacity .25s;
 
         @media only screen and (max-width: $bp-medium) {
             font-size: 4.5rem;
             margin-top: 0;
             margin-left: 5rem;
             max-width: 70%;
+        }
 
-            &.inactive {
-                display: none;
+        @media only screen and (max-width: $bp-smallest) {
+            font-size: 3rem;
+            max-width: 60%;
+            margin-left: 2rem;
+        }
+
+        &.inactive {
+            @media only screen and (max-width: $bp-medium) {
+                visibility: hidden;
+                opacity: 0;
+                transform: translateX(-150%) scale(2);
             }
         }
 
@@ -51,17 +61,31 @@
 
 .menu {
     display: flex;
+    flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
     width: 82%;
     margin-bottom: 1rem;
+    position: relative;
 
     @media only screen and (max-width: $bp-medium) {
-        position: fixed;
-        right: -100%;
+        flex-direction: column;
+        font-size: 2rem;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        margin-bottom: 0;
+        text-align: center;
+        width: 0%;
+        transform: translateX(-150%);
+
+        transition: all .3s;
 
         &.active {
-            right: 0;
+            width: 75%;
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 
@@ -75,6 +99,10 @@
         
         &:not(:last-child) {
             margin-right: 2rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin-right: 0;
+            }
         }
     }
 
@@ -95,6 +123,10 @@
             background-color: $color-tertiary;
             visibility: hidden;
             transition: all 0.15s ease-in-out;
+
+            @media only screen and (max-width: $bp-medium) {
+                height: 0;
+            }
         }
     }
 
@@ -110,7 +142,7 @@
 
 .hamburger {
     display: none;
-    margin-right: 5rem;
+    margin-right: 3.5rem;
 
     @media only screen and (max-width: $bp-medium) {
         display: block;
@@ -119,6 +151,11 @@
         top: auto;
         bottom: auto;
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        right: 2rem;
+        margin-right: 0;
     }
 
     &__bar {
@@ -144,7 +181,8 @@
             transform: translateY(-8px) rotate(-45deg);
         }
     }
-    
+
+
 }
 
 .footer {
@@ -159,12 +197,28 @@
         $color-secondary);
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
+    @media only screen and (max-width: $bp-medium) {
+        height: 24rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column-reverse;
+        height: 40rem;
+        align-items: center;
+        justify-content: space-around;
+    }
+
     &__list {
         list-style-type: none;
         font-weight: 600;
         font-size: 1.5rem;
         text-transform: uppercase;
         margin-left: 10rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-left: 0;
+            text-align: center;
+        }
     }
 
     &__link:link,
@@ -188,6 +242,9 @@
             margin-right: 5rem;
         }
 
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+        }
     }
 
     &__title {
@@ -234,6 +291,14 @@
     letter-spacing: .2rem;
     margin: 2rem 4rem 2rem;
     position: relative;
+
+    @media only screen and (max-width: $bp-xsmall) {
+        margin: 1.5rem 2.5rem 1.5rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        margin: 1rem;
+    }
 
     &__link:link,
     &__link:visited {
