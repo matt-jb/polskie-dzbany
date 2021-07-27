@@ -2,34 +2,42 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title> <%= locals.title %> | Polskie Dzbany </title>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  
-  <header class="navbar">
-    <nav class="nav-main">
-      <a href="/" class="nav-main__name"><span class="nav-main__polskie">Polskie</span> <span class="nav-main__dzbany">Dzbany</span></a>
-      <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="/about">O projekcie</a></li>
-        <li class="menu__item"><a class="menu__link" href="/episodes">Sprawdź nasze dane</a></li>
-        <% if (locals.user && locals.user.level <= 10) { %>
-          <li class="menu__item"><a class="menu__link" href="/add">Dodaj odcinek</a></li>
-        <% } %>
-        <% if (locals.user) { %>
-          <li class="menu__item"><a class="menu__link" href="/account">Twoje konto</a></li>
-          <li class="menu__item"><a class="menu__link" href="/logout">Wyloguj</a></li>
-        <% } else { %>
-          <li class="menu__item"><a class="menu__link" href="/login">Zaloguj się</a></li>
-          <li class="menu__item"><a class="menu__link" href="/register">Zarejestruj konto</a></li>
-        <% } %>
-      </ul>
-    </nav>
-  </header>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title> <%= locals.title %> | Polskie Dzbany </title>
+    
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+    <header class="navbar">
+        <nav class="nav-main">
+            <a href="/" class="nav-main__name">Polskie Dzbany</a>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="/about">O projekcie</a></li>
+                <li class="menu__item"><a class="menu__link" href="/episodes">Sprawdź nasze dane</a></li>
+                <% if (locals.user && locals.user.level <= 10) { %>
+                    <li class="menu__item"><a class="menu__link" href="/add">Dodaj odcinek</a></li>
+                <% } %>
+                <% if (locals.user) { %>
+                    <li class="menu__item"><a class="menu__link" href="/account">Twoje konto</a></li>
+                    <li class="menu__item"><a class="menu__link" href="/logout">Wyloguj</a></li>
+                <% } else { %>
+                    <li class="menu__item"><a class="menu__link" href="/login">Zaloguj się</a></li>
+                    <li class="menu__item"><a class="menu__link" href="/register">Zarejestruj konto</a></li>
+                <% } %>
+            </ul>
+            <div class="hamburger">
+                <span class="hamburger__bar bar"></span>
+                <span class="hamburger__bar bar"></span>
+                <span class="hamburger__bar bar"></span>
+            </div>
+        </nav>
+    </header>
 </head>
 
 <body>
