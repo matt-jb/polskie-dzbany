@@ -75,9 +75,9 @@ The car data is taken from the CEPiK database by a separate program, which sourc
 
 Might work on these things to make the project at least half-decent:
 
-[ ] Re-doing the backend in order to make the front-end more readable. Particularly, dividing the data into three sections: lowest jug-o-meter, highest jug-o-meter and the rest.
-[ ] Changing the "wspolczynnikDzbana" variable name.
-[ ] Calculating the jug-o-meter during the DB-query pipeline, not on the client-side.
-[ ] Color-coding the "wspolczynnikDzbana", so that it's more visible that the negative score is a desirable one.
-[ ] Preventing people from making accounts with the same username.
-[ ] Adding sorting of lists.
+- [ ] Re-doing the backend in order to make the front-end more readable. Particularly, dividing the data into three sections: lowest jug-o-meter, highest jug-o-meter and the rest.
+- [ ] Changing the "wspolczynnikDzbana" variable name.
+- [ ] Calculating the jug-o-meter during the DB-query pipeline, not on the client-side.
+- [ ] Color-coding the "wspolczynnikDzbana", so that it's more visible that the negative score is a desirable one.
+- [ ] Preventing people from making accounts with the same username.
+- [ ] Adding sorting of lists.
