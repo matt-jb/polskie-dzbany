@@ -1,36 +1,38 @@
 <%- include("partials/header"); -%>
 
 <div class="container">
-  <h1>Detale odcinka</h1>
-  <h2 class="secondary-heading"><%= episode.series %> #<%= episode.episodeNumber %></h2>
-  <p class="modified" title="<%= moment(episode.created).format("dddd, D.MM.YYYY o HH:mm:ss"); %>">Ostatni raz zmodyfikowano: <%= moment(episode.created).fromNow(); %></p>
-  <p class="first-paragraph">W tym odcinku odnotowaliśmy następującą liczbę wypadków poszczególnych marek:</p>
+    <h1>Detale odcinka</h1>
+    <h2 class="secondary-heading"><%= episode.series %> #<%= episode.episodeNumber %></h2>
+    <p class="modified" title="<%= moment(episode.created).format("dddd, D.MM.YYYY o HH:mm:ss"); %>">Ostatni raz zmodyfikowano: <%= moment(episode.created).fromNow(); %></p>
+    <p class="first-paragraph">W tym odcinku odnotowaliśmy następującą liczbę wypadków poszczególnych marek:</p>
 </div>
 
 <section class="cards">
-  <% for (const [key, value] of Object.entries((episode.brandsInEpisode).toJSON())) { %>
-    <% if (value > 0) { %>
-    <div class="card card--accident-list">
-      <img class="card__image" src="/img/cars/<%= key %>.jpg" alt="Samochód marki <%= key %>">
-      <h2 class="card__heading"><span class="card__heading-span"><%= key %></span></h2>
-      <ul class="card__list">
-        <li class="card__list--item-cars">Wypadki w odcinku: <span class="card__value"><%= value %></span></li>
-      </ul>
-    </div>
+    <% for (const [key, value] of Object.entries((episode.brandsInEpisode).toJSON())) { %>
+        <% if (value > 0) { %>
+            <div class="card card--accident-list">
+                <div class="card__image-box">
+                    <img class="card__image" src="/img/cars/<%= key %>.jpg" alt="Samochód marki <%= key %>">
+                    <h2 class="card__heading"><span class="card__heading-span"><%= key %></span></h2>
+                </div>
+                <ul class="card__list">
+                    <li class="card__list--item-cars">Wypadki w odcinku: <span class="card__value"><%= value %></span></li>
+                </ul>
+            </div>
+        <% } %>
     <% } %>
-  <% } %>
 </section>
 
 <div class="container container--bottom">
-  <p class="first-paragraph">Jeśli nie widzisz którejś marki w liście powyżej, oznacza to, że nie odnotowaliśmy ani jednego wypadku tej marki w odcinku numer <%= episode.episodeNumber %>. Jeżeli uważasz, że w powyższych danych są błędy, zostaw komentarz poniżej podając wszelkie niezbędne szczegóły. Najczęściej będzie to podanie marki oraz czasów wszystkich wypadków z danego odcinka.</p>
+    <p class="first-paragraph">Jeśli nie widzisz którejś marki w liście powyżej, oznacza to, że nie odnotowaliśmy ani jednego wypadku tej marki w odcinku numer <%= episode.episodeNumber %>. Jeżeli uważasz, że w powyższych danych są błędy, zostaw komentarz poniżej podając wszelkie niezbędne szczegóły. Najczęściej będzie to podanie marki oraz czasów wszystkich wypadków z danego odcinka.</p>
 
-  <% if (locals.user) { %>
-    <%- include("partials/_commentsForm"); -%>
-  <% } else { %>
-    <p class='first-paragraph text-center mtb-4'>Musisz być <a class="first-paragraph__link" href="/login">zalogowany</a>, by zostawić komentarz.</p>
-  <% } %>
-  
-  <%- include("partials/comments"); -%>
+        <% if (locals.user) { %>
+            <%- include("partials/_commentsForm"); -%>
+        <% } else { %>
+            <p class='first-paragraph text-center mtb-4'>Musisz być <a class="first-paragraph__link" href="/login">zalogowany</a>, by zostawić komentarz.</p>
+        <% } %>
+
+    <%- include("partials/comments"); -%>
 
 </div>
 

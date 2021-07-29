@@ -31,6 +31,11 @@ h1 {
     color: $color-grey-dark-2;
     letter-spacing: .2rem;
     margin-left: 4rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 .container {
