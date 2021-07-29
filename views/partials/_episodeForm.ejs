@@ -8,12 +8,12 @@
 
         <div class="form__group">
             <% if (!locals.episode) { %>
-                <select id="series" name="series" class="form__input">
+                <select id="series" name="series" class="form__input form__series">
                     <option value="Polskie Drogi">Polskie Drogi</option>
                     <option value="Stop Cham">Stop Cham</option>
                 </select>
             <% } else { %>
-                <select id="series" name="series" class="form__input">
+                <select id="series" name="series" class="form__input form__series">
                     <option value="<%= locals.episode.series %>"><%= locals.episode.series %></option>
                 </select>
             <% }%>
@@ -22,10 +22,10 @@
 
         <div class="form__group">
             <% if (!locals.episode) { %>
-                <input type="number" id="episodeNumber" name="episodeNumber" min="1" max="999" class="form__input" required>
+                <input type="number" id="episodeNumber" name="episodeNumber" min="1" max="999" class="form__input form__series" required>
                 <label for="episodeNumber" class="form__label">Numer odcinka</label>
             <% } else { %>
-                <input type="number" id="episodeNumber" name="episodeNumber" value="<%= locals.episode.episodeNumber %>" min="<%= locals.episode.episodeNumber %>" max="<%= locals.episode.episodeNumber %>" class="form__input" required>
+                <input type="number" id="episodeNumber" name="episodeNumber" value="<%= locals.episode.episodeNumber %>" min="<%= locals.episode.episodeNumber %>" max="<%= locals.episode.episodeNumber %>" class="form__input  form__series" required>
                 <label for="episodeNumber" class="form__label">Numer odcinka</label>
             <% }%>
         </div>

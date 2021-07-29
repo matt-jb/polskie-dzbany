@@ -202,8 +202,26 @@ h1 {
         padding: 2rem 1rem 2rem;
     }
 
-    &__group:not(:last-child) {
+    &__group {
         margin-bottom: 1.5rem;
+        
+        @media only screen and (max-width: $bp-large) {
+            width: 50%;
+        }
+
+        @media only screen and (max-width: $bp-xsmall) {
+            width: 100%;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        & .form__series {
+            @media only screen and (max-width: $bp-large) {
+                width: 90%;
+            }
+        }
     }
 
     &__label {
@@ -229,6 +247,10 @@ h1 {
         border: none;
         border-bottom: 3px solid transparent;
         width: 40rem;
+
+        @media only screen and (max-width: $bp-large) {
+            width: 90%;
+        }
 
         @media only screen and (max-width: $bp-xsmall) {
             width: 100%;
@@ -306,7 +328,11 @@ h1 {
     }
 
     &--brand {
-        width: 30rem;
+        width: 25rem;
+
+        @media only screen and (max-width: $bp-large) {
+            width: 90%;
+        }
     }
 }
 
@@ -317,6 +343,10 @@ h1 {
 
 .btn-wide {
     width: 30rem;
+
+    @media only screen and (max-width: $bp-xsmall) {
+        width: 90%;
+    }
 }
 
 .bg-white {
@@ -329,9 +359,9 @@ h1 {
 }
 
 select {
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    appearance:none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     background-image:
         linear-gradient(45deg, transparent 50%, $color-grey-dark-3 50%),
         linear-gradient(135deg, $color-grey-dark-3 50%, transparent 50%),
@@ -373,6 +403,14 @@ select {
     box-shadow: none;
     height: 8rem;
 
+    @media only screen and (max-width: $bp-medium) {
+        padding-left: 5rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        padding-left: 2rem;
+    }
+
     &:not(.visible) {
         display: none;
     }
@@ -399,12 +437,20 @@ select {
         flex: 1;
 
         @media only screen and (max-width: $bp-medium) {
-            max-width: 81%;
+            max-width: 83%;
+        }
+
+        @media only screen and (max-width: $bp-xsmall) {
+            max-width: 75%;
         }
     }
 
     &__message {
         color: $color-grey-light-1;
+
+        @media only screen and (max-width: $bp-xsmall) {
+            font-size: 1.3rem;
+        }
     }
 
     &__close {

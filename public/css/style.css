@@ -252,6 +252,12 @@ body {
     color: #333;
     letter-spacing: .2rem;
     margin: 2rem 4rem 2rem 6.4rem; }
+    @media only screen and (max-width: 37.5em) {
+      .first-paragraph__list {
+        margin: 2rem 2rem 2rem 4.7rem; } }
+    @media only screen and (max-width: 25em) {
+      .first-paragraph__list {
+        margin: 2rem 1rem 2rem 3.2rem; } }
   .first-paragraph--episodes {
     margin: 2rem 0 2rem; }
   .first-paragraph--comments {
@@ -414,8 +420,19 @@ h1 {
   @media only screen and (max-width: 25em) {
     .form {
       padding: 2rem 1rem 2rem; } }
-  .form__group:not(:last-child) {
+  .form__group {
     margin-bottom: 1.5rem; }
+    @media only screen and (max-width: 68.75em) {
+      .form__group {
+        width: 50%; } }
+    @media only screen and (max-width: 37.5em) {
+      .form__group {
+        width: 100%; } }
+    .form__group:not(:last-child) {
+      margin-bottom: 1.5rem; }
+    @media only screen and (max-width: 68.75em) {
+      .form__group .form__series {
+        width: 90%; } }
   .form__label {
     font-size: 1.5rem;
     font-weight: 400;
@@ -436,6 +453,9 @@ h1 {
     border-bottom: 3px solid transparent;
     width: 40rem;
     transition: border-bottom .2s; }
+    @media only screen and (max-width: 68.75em) {
+      .form__input {
+        width: 90%; } }
     @media only screen and (max-width: 37.5em) {
       .form__input {
         width: 100%; } }
@@ -486,7 +506,10 @@ h1 {
       text-align: center;
       padding-right: 1.5rem; }
   .form--brand {
-    width: 30rem; }
+    width: 25rem; }
+    @media only screen and (max-width: 68.75em) {
+      .form--brand {
+        width: 90%; } }
 
 .flex {
   display: flex;
@@ -494,6 +517,9 @@ h1 {
 
 .btn-wide {
   width: 30rem; }
+  @media only screen and (max-width: 37.5em) {
+    .btn-wide {
+      width: 90%; } }
 
 .bg-white {
   background-color: #fff; }
@@ -531,6 +557,12 @@ select {
   padding-left: 8rem;
   box-shadow: none;
   height: 8rem; }
+  @media only screen and (max-width: 56.25em) {
+    .alert {
+      padding-left: 5rem; } }
+  @media only screen and (max-width: 25em) {
+    .alert {
+      padding-left: 2rem; } }
   .alert:not(.visible) {
     display: none; }
   .alert__success {
@@ -547,9 +579,15 @@ select {
     flex: 1; }
     @media only screen and (max-width: 56.25em) {
       .alert__message-container {
-        max-width: 81%; } }
+        max-width: 83%; } }
+    @media only screen and (max-width: 37.5em) {
+      .alert__message-container {
+        max-width: 75%; } }
   .alert__message {
     color: #faf9f9; }
+    @media only screen and (max-width: 37.5em) {
+      .alert__message {
+        font-size: 1.3rem; } }
   .alert__close {
     border-radius: 10; }
     .alert__close-button {

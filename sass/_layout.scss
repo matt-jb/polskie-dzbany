@@ -317,6 +317,14 @@
         color: $color-grey-dark-1;
         letter-spacing: .2rem;
         margin: 2rem 4rem 2rem 6.4rem;
+
+        @media only screen and (max-width: $bp-xsmall) {
+            margin: 2rem 2rem 2rem 4.7rem;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            margin: 2rem 1rem 2rem 3.2rem;
+        }
     }
 
     &--episodes {
