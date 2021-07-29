@@ -1,3 +1,5 @@
 .DS_Store
 variables.env
 node_modules/
+public/css/style.comp.css
+public/css/style.prefix.css
