@@ -80,4 +80,6 @@ Might work on these things to make the project at least half-decent:
 - [ ] Calculating the jug-o-meter during the DB-query pipeline, not on the client-side.
 - [ ] Color-coding the "wspolczynnikDzbana", so that it's more visible that the negative score is a desirable one.
 - [ ] Preventing people from making accounts with the same username.
+- [ ] Throwing a nicer error when trying to make another episode of both the same series and number.
 - [ ] Adding sorting of lists.
+- [ ] Adding a proper 404 route.
