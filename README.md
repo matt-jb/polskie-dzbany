@@ -53,6 +53,10 @@ It sure is not. We'd have to have access to police data of accidents and I don't
 
 Nope, unfortunately you'd need to have access to the data of my email server and a MongoDB database.
 
+## Live preview
+
+However, you can preview the app [here](http://polskie-dzbany.herokuapp.com/). Please keep in mind that it's in Polish - the content is strictly about and for polish drivers.
+
 ## Alright, I get it. But how does it all work?
 
 The car data is taken from the CEPiK database by a separate program, which source files can be viewed [here](https://github.com/matt-jb/get-cars). The accidents/incidents data is uploaded through the web app by admin users. Every user can leave a comment under any episode, indicating where the admins made an error.
